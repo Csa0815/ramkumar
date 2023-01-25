@@ -1,18 +1,17 @@
-year = eval (input ("Enter a year:"))
-if year <=0 or year == float:
-    print("invalid")
+def happy(n):
+    temp=n
+    sum=0
+    while temp>0:
+        digit=temp%10
+        sum=digit**2+sum
+        temp=temp//10
+    return sum 
 
-if  year %  400  == 0:
-   isLeapYear   = True
-elif year % 100 == 0:
-   isLeapYear   = False
-elif year % 4  == 0:
-   isLeapYear   = True
-else :
-   isLeapYear   = False
-
-
-if isLeapYear:
-   print (year, "is a leap year.")
-else :
-   print (year, "is not a leap year.")
+num=int(input("Enter the number:"))
+result=num
+while result!=1 and result!=4:
+    result=(happy(result))
+if result==1:
+    print("True")
+elif result==4:
+    print("False")
